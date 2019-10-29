@@ -1,6 +1,7 @@
 package org.pierre.jpademo;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
@@ -11,7 +12,7 @@ public class Details {
 
     String detailName;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     Master master;
 
     public Master getMaster() {

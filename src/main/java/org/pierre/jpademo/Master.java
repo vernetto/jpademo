@@ -1,8 +1,10 @@
 package org.pierre.jpademo;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -11,8 +13,8 @@ public class Master {
     Long id;
     String masterName;
 
-    @OneToMany
-    List<Details> details;
+    @OneToMany(fetch = FetchType.EAGER)
+    List<Details> details = new ArrayList<>();
 
     public List<Details> getDetails() {
         return details;

@@ -26,9 +26,12 @@ public class JpademoApplication implements CommandLineRunner {
         Details details1 = new Details();
         details1.setDetailName("D1");
         details1.setId(1L);
-        details1.setMaster(master);
-        masterRepository.save(master);
+        //details1.setMaster(master);
+
+        master.getDetails().add(details1);
+
         detailsRepository.save(details1);
+        masterRepository.save(master);
 
         List<Master> allMasters = masterRepository.findAll();
         allMasters.forEach(mymaster -> {
