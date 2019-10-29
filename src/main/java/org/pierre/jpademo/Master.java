@@ -13,7 +13,7 @@ public class Master {
     Long id;
     String masterName;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.LAZY)
     List<Details> details = new ArrayList<>();
 
     public List<Details> getDetails() {

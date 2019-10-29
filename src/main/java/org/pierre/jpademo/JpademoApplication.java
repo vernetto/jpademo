@@ -33,9 +33,16 @@ public class JpademoApplication implements CommandLineRunner {
         detailsRepository.save(details1);
         masterRepository.save(master);
 
+/*
         List<Master> allMasters = masterRepository.findAll();
         allMasters.forEach(mymaster -> {
             System.out.println(mymaster);
         });
+*/
+        Master mymaster = masterRepository.fetchEager();
+        System.out.println(mymaster);
+
+
+
     }
 }
